@@ -1,15 +1,21 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import StaffLMS from './Staff'
+import StaffPortal from './Staffnew'
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
     <>
-   <StaffLMS />
+ <Router>
+    <Routes>
+      <Route path='/' element={<StaffPortal />} >  </Route>
+      <Route path='/Staff' element={<StaffLMS />}>
+      </Route>
+    </Routes>
+    </Router>
     </>
   )
 }
